@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "../components/link";
 import { getAllPosts } from "../lib/api";
 import MainContent from "../components/mainContent";
+import Header from "../components/header";
 import { Chip, Box, Stack, Typography } from "@mui/material";
 import config from "../site.config.json";
 
@@ -24,6 +25,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
         <meta name="description" content={config.description} />
       </Head>
       <Box>
+        <Header />
         <MainContent>
           <Stack
             direction="column"
