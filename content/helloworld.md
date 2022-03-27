@@ -10,7 +10,29 @@ aaaaaaaaaaaaa あああああああああああ
 
 ## Title 2
 
-bbbbbbbbbbbbbbbiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii いいいいいいいいいいいいい i
+- list 1
+- list 2
+- list 3
+
+1. list 1
+2. list 2
+3. list 3
+
+```js:slug.tsx
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(params.slug);
+  const html = markdownToHtml(post.content || "");
+
+  return {
+    props: {
+      post: {
+        ...post,
+        html,
+      },
+    },
+  };
+}
+```
 
 ## Youtube Link
 
