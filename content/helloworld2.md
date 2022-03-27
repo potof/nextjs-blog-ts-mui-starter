@@ -1,7 +1,7 @@
 ---
 title: "test page"
 date: "2022-03-27"
-topics: ["debug"]
+topics: ["debug", "Next.js", "TypeScript"]
 ---
 
 # Title 1
