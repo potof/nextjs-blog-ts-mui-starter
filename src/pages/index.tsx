@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "../components/link";
 import { getAllPosts } from "../lib/api";
 import MainContent from "../components/mainContent";
-import { Container, Box, Stack, Typography } from "@mui/material";
+import { Chip, Box, Stack, Typography } from "@mui/material";
 import config from "../site.config.json";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -51,6 +51,9 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                   </Typography>
                   <Typography color="gray">{post.date}</Typography>
                 </Box>
+                {post.topics.map((tag: string) => (
+                  <Chip size="small" label={tag} sx={{ mr: "4px" }} />
+                ))}
               </Link>
             ))}
           </Stack>
