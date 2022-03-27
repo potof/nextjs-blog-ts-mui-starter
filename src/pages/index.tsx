@@ -50,10 +50,10 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                     {post.title}
                   </Typography>
                   <Typography color="gray">{post.date}</Typography>
+                  {post.topics.map((tag: string) => (
+                    <Chip size="small" label={tag} sx={{ mr: "4px" }} />
+                  ))}
                 </Box>
-                {post.topics.map((tag: string) => (
-                  <Chip size="small" label={tag} sx={{ mr: "4px" }} />
-                ))}
               </Link>
             ))}
           </Stack>
