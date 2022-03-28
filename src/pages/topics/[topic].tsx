@@ -4,7 +4,8 @@ import Link from "../../components/link";
 import { getAllPosts, getTopicCountMap } from "../../lib/api";
 import MainContent from "../../components/mainContent";
 import Header from "../../components/header";
-import { Chip, Box, Stack, Typography } from "@mui/material";
+import Topics from "../../components/topics";
+import { Box, Stack, Typography } from "@mui/material";
 import config from "../../site.config.json";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -25,7 +26,7 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
-const Topic: NextPage<Props> = ({ allPosts }) => {
+const Topic: NextPage<Props> = ({ allPosts, currentTopic }) => {
   return (
     <>
       <Head>
@@ -34,7 +35,14 @@ const Topic: NextPage<Props> = ({ allPosts }) => {
       </Head>
       <Box>
         <Header />
+
         <MainContent>
+          <Box textAlign="center" py="50px">
+            <Typography variant="h3" lineHeight="52px">
+              {currentTopic}
+            </Typography>
+          </Box>
+
           <Stack
             direction="column"
             justifyContent="flex-start"
@@ -42,29 +50,31 @@ const Topic: NextPage<Props> = ({ allPosts }) => {
             spacing={2}
           >
             {allPosts.map((post) => (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${post.slug}`}
-                key={post.title}
-                color="inherit"
-                underline="none"
-              >
-                <Box
-                  sx={{
-                    "&:hover": {
-                      opacity: 0.5,
-                    },
-                  }}
+              <>
+                <Link
+                  href="/posts/[slug]"
+                  as={`/posts/${post.slug}`}
+                  key={post.title}
+                  color="inherit"
+                  underline="none"
                 >
-                  <Typography component="h2" variant="h5" gutterBottom>
-                    {post.title}
-                  </Typography>
-                  <Typography color="gray">{post.date}</Typography>
-                  {post.topics.map((tag: string) => (
-                    <Chip size="small" label={tag} sx={{ mr: "4px" }} />
-                  ))}
+                  <Box
+                    sx={{
+                      "&:hover": {
+                        opacity: 0.5,
+                      },
+                    }}
+                  >
+                    <Typography component="h2" variant="h5" gutterBottom>
+                      {post.title}
+                    </Typography>
+                    <Typography color="gray">{post.date}</Typography>
+                  </Box>
+                </Link>
+                <Box>
+                  <Topics topics={post.topics} />
                 </Box>
-              </Link>
+              </>
             ))}
           </Stack>
         </MainContent>
