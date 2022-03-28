@@ -34,3 +34,15 @@ export function getAllPosts() {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+type TopicCountMap = Record<string, number>;
+export const getTopicCountMap = async (): Promise<TopicCountMap> => {
+  const allPostsData = getAllPosts();
+  const topicCountMap = allPostsData.reduce((acc: TopicCountMap, post) => {
+    post.topics?.forEach((topic: string) => {
+      acc[topic] = acc[topic] === undefined ? 1 : acc[topic] + 1;
+    });
+    return acc;
+  }, {});
+  return topicCountMap;
+};
