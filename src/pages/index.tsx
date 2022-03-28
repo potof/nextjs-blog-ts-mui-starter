@@ -49,7 +49,12 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                       },
                     }}
                   >
-                    <Typography component="h2" variant="h5" gutterBottom>
+                    <Typography
+                      component="h2"
+                      variant="h5"
+                      fontWeight="700"
+                      gutterBottom
+                    >
                       {post.title}
                     </Typography>
                     <Typography color="gray">{post.date}</Typography>

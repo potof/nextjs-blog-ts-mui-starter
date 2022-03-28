@@ -38,7 +38,7 @@ const Topic: NextPage<Props> = ({ allPosts, currentTopic }) => {
 
         <MainContent>
           <Box textAlign="center" py="50px">
-            <Typography variant="h3" lineHeight="52px">
+            <Typography variant="h3" lineHeight="52px" fontWeight="700">
               {currentTopic}
             </Typography>
           </Box>
@@ -65,7 +65,12 @@ const Topic: NextPage<Props> = ({ allPosts, currentTopic }) => {
                       },
                     }}
                   >
-                    <Typography component="h2" variant="h5" gutterBottom>
+                    <Typography
+                      component="h2"
+                      variant="h5"
+                      fontWeight="700"
+                      gutterBottom
+                    >
                       {post.title}
                     </Typography>
                     <Typography color="gray">{post.date}</Typography>

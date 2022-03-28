@@ -23,7 +23,7 @@ const Header = () => {
             sx={{
               color: "black",
               fontSize: "22px",
-              fontWeight: "bold",
+              fontWeight: "700",
               textDecoration: "none",
             }}
           >

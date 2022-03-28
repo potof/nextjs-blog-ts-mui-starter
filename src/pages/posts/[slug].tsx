@@ -59,7 +59,7 @@ const Post = ({ post }: any) => {
         <Header />
         <MainContent>
           <Box textAlign="center" py="50px">
-            <Typography variant="h3" lineHeight="52px">
+            <Typography variant="h3" lineHeight="52px" fontWeight="700">
               {post.title}
             </Typography>
             <Typography color="gray" display="inline-block" pr="10px" pt="20px">
