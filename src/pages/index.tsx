@@ -1,12 +1,11 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "../components/link";
-import { NextLinkComposed } from "../components/link";
 import { getAllPosts } from "../lib/api";
 import MainContent from "../components/mainContent";
 import Header from "../components/header";
 import Topics from "../components/topics";
-import { Chip, Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import config from "../site.config.json";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
