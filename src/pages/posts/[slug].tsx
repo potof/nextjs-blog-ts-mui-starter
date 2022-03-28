@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { Container, Box } from "@mui/material";
+import { Box, Typography, Chip } from "@mui/material";
 import markdownToHtml from "zenn-markdown-html";
 import MainContent from "../../components/mainContent";
 import Header from "../../components/header";
@@ -57,6 +57,17 @@ const Post = ({ post }: any) => {
       <Box>
         <Header />
         <MainContent>
+          <Box textAlign="center" py="50px">
+            <Typography variant="h3" lineHeight="52px">
+              {post.title}
+            </Typography>
+            <Typography color="gray" display="inline-block" pr="10px" pt="20px">
+              {post.date}
+            </Typography>
+            {post.topics.map((tag: string) => (
+              <Chip size="small" label={tag} sx={{ mr: "4px" }} />
+            ))}
+          </Box>
           <div
             className="znc"
             dangerouslySetInnerHTML={{ __html: post.html }}
