@@ -1,10 +1,11 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-// import Link from "next/link";
 import Link from "../components/link";
+import { NextLinkComposed } from "../components/link";
 import { getAllPosts } from "../lib/api";
 import MainContent from "../components/mainContent";
 import Header from "../components/header";
+import Topics from "../components/topics";
 import { Chip, Box, Stack, Typography } from "@mui/material";
 import config from "../site.config.json";
 
@@ -34,29 +35,31 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             spacing={2}
           >
             {allPosts.map((post) => (
-              <Link
-                href="/posts/[slug]"
-                as={`/posts/${post.slug}`}
-                key={post.title}
-                color="inherit"
-                underline="none"
-              >
-                <Box
-                  sx={{
-                    "&:hover": {
-                      opacity: 0.5,
-                    },
-                  }}
+              <>
+                <Link
+                  href="/posts/[slug]"
+                  as={`/posts/${post.slug}`}
+                  key={post.title}
+                  color="inherit"
+                  underline="none"
                 >
-                  <Typography component="h2" variant="h5" gutterBottom>
-                    {post.title}
-                  </Typography>
-                  <Typography color="gray">{post.date}</Typography>
-                  {post.topics.map((tag: string) => (
-                    <Chip size="small" label={tag} sx={{ mr: "4px" }} />
-                  ))}
+                  <Box
+                    sx={{
+                      "&:hover": {
+                        opacity: 0.5,
+                      },
+                    }}
+                  >
+                    <Typography component="h2" variant="h5" gutterBottom>
+                      {post.title}
+                    </Typography>
+                    <Typography color="gray">{post.date}</Typography>
+                  </Box>
+                </Link>
+                <Box>
+                  <Topics topics={post.topics} />
                 </Box>
-              </Link>
+              </>
             ))}
           </Stack>
         </MainContent>

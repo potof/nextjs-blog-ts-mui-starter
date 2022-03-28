@@ -5,6 +5,7 @@ import { Box, Typography, Chip } from "@mui/material";
 import markdownToHtml from "zenn-markdown-html";
 import MainContent from "../../components/mainContent";
 import Header from "../../components/header";
+import Topics from "../../components/topics";
 import "zenn-content-css";
 
 import { getPostBySlug, getAllPosts } from "../../lib/api";
@@ -64,9 +65,7 @@ const Post = ({ post }: any) => {
             <Typography color="gray" display="inline-block" pr="10px" pt="20px">
               {post.date}
             </Typography>
-            {post.topics.map((tag: string) => (
-              <Chip size="small" label={tag} sx={{ mr: "4px" }} />
-            ))}
+            <Topics topics={post.topics} />
           </Box>
           <div
             className="znc"
