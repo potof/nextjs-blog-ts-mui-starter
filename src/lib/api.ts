@@ -26,13 +26,18 @@ export function getPostBySlug(slug: string) {
   };
 }
 
-export function getAllPosts() {
+export function getAllPosts(topic = "all") {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+
+  if (topic == "all") {
+    return posts;
+  } else {
+    return posts.filter((slug) => slug.topics.includes(topic));
+  }
 }
 
 type TopicCountMap = Record<string, number>;

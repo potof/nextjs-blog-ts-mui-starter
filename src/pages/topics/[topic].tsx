@@ -18,9 +18,10 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const allPosts = getAllPosts();
+  const currentTopic = params.topic;
+  const allPosts = getAllPosts(currentTopic);
   return {
-    props: { allPosts },
+    props: { allPosts, currentTopic },
   };
 };
 
@@ -34,7 +35,6 @@ const Topic: NextPage<Props> = ({ allPosts }) => {
       <Box>
         <Header />
         <MainContent>
-          aaaa
           <Stack
             direction="column"
             justifyContent="flex-start"
