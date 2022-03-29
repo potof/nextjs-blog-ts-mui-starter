@@ -38,6 +38,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
                 title={post.title}
                 date={post.date}
                 topics={post.topics}
+                key={post.slug}
               />
             ))}
           </Stack>

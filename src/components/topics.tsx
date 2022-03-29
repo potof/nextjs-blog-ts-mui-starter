@@ -4,15 +4,16 @@ import { Chip } from "@mui/material";
 const Topics = ({ topics }: { topics: string[] }) => {
   return (
     <>
-      {topics.map((tag: string) => (
+      {topics.map((topic: string) => (
         <Chip
           component={NextLinkComposed}
           to={{
             pathname: "/topics/[topic]",
           }}
-          linkAs={`/topics/${tag}`}
+          linkAs={`/topics/${topic}`}
           size="small"
-          label={tag}
+          key={topic}
+          label={topic}
           sx={{ mr: "4px" }}
           clickable
         />
