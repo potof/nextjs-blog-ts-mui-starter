@@ -1,3 +1,9 @@
+## Demo
+
+https://nextjs-blog-ts-mui-starter.vercel.app/
+
+## Guide
+
 「Markdown で書いた文書をさくっとブログ形式で公開できる」ことを目的に作りました。
 
 Next.js 公式のブログテンプレートでは外国人向けのレイアウトなのか正直なところ使えるところは少なく、多数のカスタマイズが必要になるので大変です。
