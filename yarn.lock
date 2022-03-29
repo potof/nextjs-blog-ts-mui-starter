@@ -516,6 +516,11 @@
   "resolved" "https://registry.npmjs.org/@steelydylan/markdown-it-imsize/-/markdown-it-imsize-1.0.2.tgz"
   "version" "1.0.2"
 
+"@types/gtag.js@^0.0.10":
+  "integrity" "sha512-98Hy7woUb3jMAMXkZQwfIOYNyfxmI0+U4m0PpCGdnd/FHk0tDpQFCqgXdNkdEoXsKkcGya/2Gew1cAJjKJspVw=="
+  "resolved" "https://registry.npmjs.org/@types/gtag.js/-/gtag.js-0.0.10.tgz"
+  "version" "0.0.10"
+
 "@types/json5@^0.0.29":
   "integrity" "sha1-7ihweulOEdK4J7y+UnC86n8+ce4="
   "resolved" "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
