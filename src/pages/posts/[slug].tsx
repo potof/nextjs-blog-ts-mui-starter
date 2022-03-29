@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Head from "next/head";
-import { Box, Typography, Chip } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import markdownToHtml from "zenn-markdown-html";
 import MainContent from "../../components/mainContent";
 import Header from "../../components/header";
