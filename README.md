@@ -17,7 +17,8 @@ Next.js & Typescript で作っています
   - 外部リンクのブログカード化
 - パースした HTML には Zenn の CSS を適用しています
   - すごい、一気に Zenn で馴染みある画面に！
-- トピックス機能を作っています（いわゆるタグです）
+- トピックス機能
+- Google Analytics
 
 zenn-editor
 
