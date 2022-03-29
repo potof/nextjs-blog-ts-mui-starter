@@ -1,5 +1,7 @@
 {
   "title": "Blog",
   "description": "my blog",
-  "author": "Noname Nanashi"
+  "author": "Noname Nanashi",
+  "twitter": "https://twitter.com/",
+  "github": "https://github.com/"
 }

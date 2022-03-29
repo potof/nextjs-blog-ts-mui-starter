@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import { NextLinkComposed } from "../components/link";
 import config from "../site.config.json";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Header = () => {
   return (
@@ -29,6 +31,30 @@ const Header = () => {
           >
             {"{{"} {config.title} {"}}"}
           </Typography>
+
+          {config.twitter && (
+            <a href={config.twitter} target="_blank" rel="noopener noreferrer">
+              <TwitterIcon
+                fontSize="large"
+                sx={{
+                  color: "black",
+                  textDecoration: "none",
+                }}
+              />
+            </a>
+          )}
+
+          {config.github && (
+            <a href={config.github} target="_blank" rel="noopener noreferrer">
+              <GitHubIcon
+                fontSize="large"
+                sx={{
+                  color: "black",
+                  textDecoration: "none",
+                }}
+              />
+            </a>
+          )}
         </Container>
       </Box>
     </>
