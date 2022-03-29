@@ -1,4 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+「Markdown で書いた文書をさくっとブログ形式で公開できる」ことを目的に作りました。
+
+Next.js 公式のブログテンプレートでは外国人向けのレイアウトなのか正直なところ使えるところは少なく、多数のカスタマイズが必要になるので大変です。
+
+カスタマイズするベースとして機能するようにシンプルに作りました。
+
+## 特徴
+
+Next.js & Typescript で作っています
+
+- お手軽にそれっぽい画面になるように Material UI 5 を導入しています
+  - next/link を MUI Link でラッピングするやつ公式サンプルも導入しています
+- Markdown パーサは Zenn-editor packages を使っています
+  - シンタックスハイライト
+  - Twitter Link 埋め込み
+  - Youtube Link 埋め込み
+  - 外部リンクのブログカード化
+- パースした HTML には Zenn の CSS を適用しています
+  - すごい、一気に Zenn で馴染みある画面に！
+- トピックス機能を作っています（いわゆるタグです）
+
+zenn-editor
+
+https://github.com/zenn-dev/zenn-editor/tree/canary/packages
 
 ## Getting Started
 
