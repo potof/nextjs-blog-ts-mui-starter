@@ -5,7 +5,7 @@ interface Props {
   children: ReactNode;
 }
 
-const MainContent = ({ children }: Props) => {
+const MainContent: React.FC<Props> = ({ children }) => {
   return (
     <Container
       maxWidth="md"

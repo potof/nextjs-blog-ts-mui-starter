@@ -1,7 +1,11 @@
 import { NextLinkComposed } from "../components/link";
 import { Chip } from "@mui/material";
 
-const Topics = ({ topics }: { topics: string[] }) => {
+interface Props {
+  topics: string[];
+}
+
+const Topics: React.FC<Props> = ({ topics }) => {
   return (
     <>
       {topics.map((topic: string) => (

@@ -3,17 +3,14 @@ import Topics from "../components/topics";
 import { getNDayBefore } from "../lib/date";
 import { Typography, Box } from "@mui/material";
 
-const SlugCard = ({
-  slug,
-  title,
-  date,
-  topics,
-}: {
+type Props = {
   slug: string;
   title: string;
   date: string;
   topics: string[];
-}) => {
+};
+
+const SlugCard: React.FC<Props> = ({ slug, title, date, topics }) => {
   return (
     <>
       <Link
