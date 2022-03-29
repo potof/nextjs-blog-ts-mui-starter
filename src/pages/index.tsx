@@ -1,11 +1,10 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
-import Head from "next/head";
 import { getAllPosts } from "../lib/api";
 import MainContent from "../components/mainContent";
 import Header from "../components/header";
 import SlugCard from "../components/slugCard";
 import { Box, Stack } from "@mui/material";
-import config from "../site.config.json";
+import Meta from "../components/meta";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -19,10 +18,7 @@ export const getStaticProps = async () => {
 const Home: NextPage<Props> = ({ allPosts }) => {
   return (
     <>
-      <Head>
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
-      </Head>
+      <Meta />
       <Box>
         <Header />
         <MainContent>

@@ -6,6 +6,7 @@ import Header from "../../components/header";
 import SlugCard from "../../components/slugCard";
 import { Box, Stack, Typography } from "@mui/material";
 import config from "../../site.config.json";
+import Meta from "../../components/meta";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -28,20 +29,18 @@ export const getStaticProps = async ({ params }: any) => {
 const Topic: NextPage<Props> = ({ allPosts, currentTopic }) => {
   return (
     <>
-      <Head>
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
-      </Head>
+      <Meta
+        title={`${currentTopic} 記事一覧`}
+        path={`/topics/${currentTopic}`}
+      />
       <Box>
         <Header />
-
         <MainContent>
           <Box textAlign="center" py="50px">
             <Typography variant="h3" lineHeight="52px" fontWeight="700">
               {currentTopic}
             </Typography>
           </Box>
-
           <Stack
             direction="column"
             justifyContent="flex-start"
