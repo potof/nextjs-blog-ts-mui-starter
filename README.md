@@ -2,6 +2,8 @@
 
 https://nextjs-blog-ts-mui-starter.vercel.app/
 
+![score](README/score.png)
+
 ## Guide
 
 「Markdown で書いた文書をさくっとブログ形式で公開できる」ことを目的に作りました。
