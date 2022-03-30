@@ -29,15 +29,13 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             spacing={3}
           >
             {allPosts.map((post) => (
-              <Box>
-                <SlugCard
-                  slug={post.slug}
-                  title={post.title}
-                  date={post.date}
-                  topics={post.topics}
-                  key={post.slug}
-                />
-              </Box>
+              <SlugCard
+                slug={post.slug}
+                title={post.title}
+                date={post.date}
+                topics={post.topics}
+                key={post.slug}
+              />
             ))}
           </Stack>
         </MainContent>

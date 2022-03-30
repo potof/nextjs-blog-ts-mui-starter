@@ -12,7 +12,7 @@ type Props = {
 
 const SlugCard: React.FC<Props> = ({ slug, title, date, topics }) => {
   return (
-    <>
+    <Box>
       <Link
         href="/posts/[slug]"
         as={`/posts/${slug}`}
@@ -36,7 +36,7 @@ const SlugCard: React.FC<Props> = ({ slug, title, date, topics }) => {
       <Box>
         <Topics topics={topics} />
       </Box>
-    </>
+    </Box>
   );
 };
 
