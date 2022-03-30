@@ -26,16 +26,18 @@ const Home: NextPage<Props> = ({ allPosts }) => {
             direction="column"
             justifyContent="flex-start"
             alignItems="stretch"
-            spacing={2}
+            spacing={3}
           >
             {allPosts.map((post) => (
-              <SlugCard
-                slug={post.slug}
-                title={post.title}
-                date={post.date}
-                topics={post.topics}
-                key={post.slug}
-              />
+              <Box>
+                <SlugCard
+                  slug={post.slug}
+                  title={post.title}
+                  date={post.date}
+                  topics={post.topics}
+                  key={post.slug}
+                />
+              </Box>
             ))}
           </Stack>
         </MainContent>
