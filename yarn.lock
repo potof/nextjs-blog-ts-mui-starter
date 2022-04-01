@@ -219,6 +219,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     "to-fast-properties" "^2.0.0"
 
+"@corex/deepmerge@^2.6.148":
+  "integrity" "sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA=="
+  "resolved" "https://registry.npmjs.org/@corex/deepmerge/-/deepmerge-2.6.148.tgz"
+  "version" "2.6.148"
+
 "@emotion/babel-plugin@^11.7.1":
   "integrity" "sha512-6mGSCWi9UzXut/ZAN6lGFu33wGR3SJisNl3c0tvlmb8XChH1b2SUvxvnOh7hvLpqyRdHHU9AiazV3Cwbk5SXKQ=="
   "resolved" "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.7.2.tgz"
@@ -1894,7 +1899,15 @@
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
 
-"next@>=10.2.0", "next@12.1.1":
+"next-sitemap@^2.5.17":
+  "integrity" "sha512-L0zwaqt5WBm8FL/mraA08YbsJD+dnc2gYO1FeawBVUDvFKDXhYXQBTAT2AbkXwCnKinM94/VvBQvw3n8LC9TpA=="
+  "resolved" "https://registry.npmjs.org/next-sitemap/-/next-sitemap-2.5.17.tgz"
+  "version" "2.5.17"
+  dependencies:
+    "@corex/deepmerge" "^2.6.148"
+    "minimist" "^1.2.6"
+
+"next@*", "next@>=10.2.0", "next@12.1.1":
   "integrity" "sha512-IOfEIAgroMtsoYz6HXpDS+b5WB9WZ+MH266COXGlcpIiYSgUyJf9xV6vF+zY2RPvBJFT4fUW0EVdVnoOmTloDw=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.1.tgz"
   "version" "12.1.1"

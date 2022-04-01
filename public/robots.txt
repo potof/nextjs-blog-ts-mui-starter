@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextjs-blog-ts-mui-starter.vercel.app/
+
+# Sitemaps
+Sitemap: https://nextjs-blog-ts-mui-starter.vercel.app/sitemap.xml
