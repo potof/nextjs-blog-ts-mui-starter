@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 date: "2022-01-27"
-topics: ["debug"]
+topics: ["test"]
 ---
 
 # Title 1
