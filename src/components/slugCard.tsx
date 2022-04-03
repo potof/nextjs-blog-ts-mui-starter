@@ -27,10 +27,12 @@ const SlugCard: React.FC<Props> = ({ slug, title, date, topics }) => {
             },
           }}
         >
-          <Typography component="h2" variant="h6" fontWeight="700" gutterBottom>
+          <Typography component="h2" variant="h5" fontWeight="700" gutterBottom>
             {title}
           </Typography>
-          <Typography color="gray">{getNDayBefore(date)}</Typography>
+          <Typography fontSize={12} color="gray">
+            {getNDayBefore(date)}
+          </Typography>
         </Box>
       </Link>
       <Box>

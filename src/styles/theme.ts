@@ -11,7 +11,16 @@ const theme = createTheme({
     background: {
       default: "#EDF2F6",
     },
-    // text: { primary: "#ff9800" },
+  },
+  typography: {
+    fontWeightMedium: 400,
+    h1: { fontSize: 55, fontWeight: 700 },
+    h2: { fontSize: 48 },
+    h3: { fontSize: 42 },
+    h4: { fontSize: 36 },
+    h5: { fontSize: 20 },
+    h6: { fontSize: 18 },
+    subtitle1: { fontSize: 18 },
   },
 });
 
