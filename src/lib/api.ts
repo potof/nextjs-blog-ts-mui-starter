@@ -4,8 +4,11 @@ import matter from "gray-matter";
 
 const postsDirectory = join(process.cwd(), "content");
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getPostSlugs(excludeSlug?: string) {
+  const files = fs.readdirSync(postsDirectory);
+  return !excludeSlug
+    ? files
+    : files.filter((slug) => slug.indexOf(excludeSlug));
 }
 
 export function getPostBySlug(slug: string) {
@@ -26,8 +29,8 @@ export function getPostBySlug(slug: string) {
   };
 }
 
-export function getAllPosts(topics?: string[]) {
-  const slugs = getPostSlugs();
+export function getAllPosts(topics?: string[], excludeSlug?: string) {
+  const slugs = getPostSlugs(excludeSlug);
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));

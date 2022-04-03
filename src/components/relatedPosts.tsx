@@ -16,7 +16,9 @@ type Props = {
 };
 
 const RelatedPosts: React.FC<Props> = ({ posts }) => {
-  return (
+  return !posts.length ? (
+    <></>
+  ) : (
     <Container
       maxWidth="md"
       sx={{

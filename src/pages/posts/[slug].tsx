@@ -22,9 +22,12 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ slug: string }>) {
+  // 対象の記事取得
   const post = getPostBySlug(params!.slug);
   const html = markdownToHtml(post.content || "");
-  const relatedPosts = getAllPosts(post.topics);
+
+  // 関連記事向けの記事取得
+  const relatedPosts = getAllPosts(post.topics, params!.slug);
 
   return {
     props: {
