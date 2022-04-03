@@ -30,11 +30,10 @@ const RelatedPosts: React.FC<Props> = ({ posts }) => {
       </Typography>
       <Box pt="30px">
         {posts.slice(0, config.relatedPostsMaxCount).map((post) => (
-          <Box>
+          <Box key={post.title}>
             <Link
               href="/posts/[slug]"
               as={`/posts/${post.slug}`}
-              key={post.title}
               color="inherit"
               underline="none"
             >
@@ -58,9 +57,6 @@ const RelatedPosts: React.FC<Props> = ({ posts }) => {
                 </Typography>
               </Box>
             </Link>
-            {/* <Box>
-              <Topics topics={post.topics} />
-            </Box> */}
           </Box>
         ))}
       </Box>
