@@ -7,6 +7,7 @@ import Header from "../../components/header";
 import Topics from "../../components/topics";
 import Meta from "../../components/meta";
 import "zenn-content-css";
+import TodayIcon from "@mui/icons-material/Today";
 
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 
@@ -56,13 +57,24 @@ const Post = ({ post }: any) => {
         <Header />
         <MainContent>
           <Box textAlign="center" py="50px">
-            <Typography variant="h1" lineHeight="52px">
-              {post.title}
-            </Typography>
-            <Typography color="gray" display="inline-block" pr="10px" pt="20px">
-              {post.date}
-            </Typography>
-            <Topics topics={post.topics} />
+            <Box>
+              <Typography variant="h1" lineHeight="52px">
+                {post.title}
+              </Typography>
+            </Box>
+            <Box pr="10px" pt="20px">
+              <Typography color="gray" display="inline-block" mx={2}>
+                <TodayIcon
+                  fontSize="small"
+                  sx={{
+                    verticalAlign: "text-bottom",
+                    mr: 0.5,
+                  }}
+                />
+                {post.date}
+              </Typography>
+              <Topics topics={post.topics} />
+            </Box>
           </Box>
           <div
             className="znc"
