@@ -1,3 +1,8 @@
+import type {
+  NextPage,
+  InferGetStaticPropsType,
+  GetStaticPropsContext,
+} from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { Box, Typography } from "@mui/material";
@@ -6,20 +11,20 @@ import MainContent from "../../components/mainContent";
 import Header from "../../components/header";
 import Topics from "../../components/topics";
 import Meta from "../../components/meta";
+import RelatedPosts from "../../components/relatedPosts";
 import "zenn-content-css";
 import TodayIcon from "@mui/icons-material/Today";
-
 import { getPostBySlug, getAllPosts } from "../../lib/api";
+import config from "../../site.config.json";
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug);
+export async function getStaticProps({
+  params,
+}: GetStaticPropsContext<{ slug: string }>) {
+  const post = getPostBySlug(params!.slug);
   const html = markdownToHtml(post.content || "");
+  const relatedPosts = getAllPosts(post.topics);
 
   return {
     props: {
@@ -27,6 +32,7 @@ export async function getStaticProps({ params }: Params) {
         ...post,
         html,
       },
+      relatedPosts: relatedPosts,
     },
   };
 }
@@ -45,14 +51,14 @@ export const getStaticPaths = async () => {
   };
 };
 
-const Post = ({ post }: any) => {
+const Post: NextPage<Props> = ({ post, relatedPosts }) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
     <>
-      <Meta title={post.tile} ogtype="article" path={`/posts/${post.slug}`} />
+      <Meta title={post.title} ogtype="article" path={`/posts/${post.slug}`} />
       <Box>
         <Header />
         <MainContent>
@@ -81,6 +87,7 @@ const Post = ({ post }: any) => {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </MainContent>
+        {config.isViewRelatedPosts && <RelatedPosts posts={relatedPosts} />}
       </Box>
     </>
   );

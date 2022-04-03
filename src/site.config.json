@@ -5,5 +5,7 @@
   "twitter": "https://twitter.com/Potof_",
   "github": "https://github.com/potof/nextjs-blog-ts-mui-starter",
   "url": "https://nextjs-blog-ts-mui-starter.vercel.app/",
-  "gtag": "UA-XXXXXXXX-X"
+  "gtag": "UA-XXXXXXXX-X",
+  "isViewRelatedPosts": true,
+  "relatedPostsMaxCount": 3
 }

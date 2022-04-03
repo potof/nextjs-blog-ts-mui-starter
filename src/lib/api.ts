@@ -26,17 +26,20 @@ export function getPostBySlug(slug: string) {
   };
 }
 
-export function getAllPosts(topic = "all") {
+export function getAllPosts(topics?: string[]) {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
-  if (topic == "all") {
+  if (topics == null) {
+    // 全部の記事を返す
     return posts;
   } else {
-    return posts.filter((slug) => slug.topics.includes(topic));
+    // topics でフィルタして記事を返却する
+    const isIncludes = (arr: string[], target: string[]) =>
+      arr.some((el) => target.includes(el));
+    return posts.filter((slug) => isIncludes(slug.topics, topics));
   }
 }
 
