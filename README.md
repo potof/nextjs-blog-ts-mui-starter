@@ -27,6 +27,8 @@ Next.js & Typescript で作っています
   - すごい、一気に Zenn で馴染みある画面に！
 - トピックス機能
 - Google Analytics
+- 記事の最後に関連記事を出力する機能
+  - `site.config.json` の `isViewRelatedPosts` を `true` で有効にします
 
 zenn-editor
 
