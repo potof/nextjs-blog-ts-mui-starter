@@ -7,5 +7,6 @@
   "url": "https://nextjs-blog-ts-mui-starter.vercel.app/",
   "gtag": "UA-XXXXXXXX-X",
   "isViewRelatedPosts": true,
-  "relatedPostsMaxCount": 3
+  "relatedPostsMaxCount": 3,
+  "defaultPostIcon": "fa-solid fa-folder-open"
 }

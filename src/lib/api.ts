@@ -16,7 +16,7 @@ export function getPostBySlug(slug: string) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const {
-    data: { title, date, topics },
+    data: { title, date, topics, icon },
     content,
   } = matter(fileContents);
 
@@ -26,6 +26,7 @@ export function getPostBySlug(slug: string) {
     date: date,
     topics: topics,
     content: content,
+    icon: icon,
   };
 }
 

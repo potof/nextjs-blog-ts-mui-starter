@@ -2,6 +2,7 @@
 title: "test page"
 date: "2022-03-27"
 topics: ["debug", "Next.js", "TypeScript"]
+icon: "fa-solid fa-a"
 ---
 
 # Title 1

@@ -51,6 +51,7 @@ const Topic: NextPage<Props> = ({ allPosts, currentTopic }) => {
                 title={post.title}
                 date={post.date}
                 topics={post.topics}
+                icon={post.icon}
                 key={post.slug}
               />
             ))}
