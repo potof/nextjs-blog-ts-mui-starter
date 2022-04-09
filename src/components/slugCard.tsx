@@ -13,7 +13,18 @@ type Props = {
   icon: string;
 };
 
+const stringToNumber = (str: string): number =>
+  Array.from(str)
+    .map((ch) => ch.charCodeAt(0))
+    .reduce((a, b) => a + b);
+
 const SlugCard: React.FC<Props> = ({ slug, title, date, topics, icon }) => {
+  // アイコンカラーをタイトルからランダムカラーを計算する
+  const iconColorNum = stringToNumber(title) % 360;
+  const iconColorHsl = config.randomColorPostIcon
+    ? `hsl(${iconColorNum}, 40%, 60%)`
+    : "";
+
   return (
     <Box>
       <Grid container wrap="nowrap">
@@ -45,7 +56,11 @@ const SlugCard: React.FC<Props> = ({ slug, title, date, topics, icon }) => {
             <Icon
               className={icon || config.defaultPostIcon}
               color="primary"
-              sx={{ fontSize: "40px", m: 2 }}
+              sx={{
+                fontSize: "40px",
+                m: 2,
+                color: iconColorHsl,
+              }}
             />
           </Link>
         </Grid>

@@ -8,5 +8,6 @@
   "gtag": "UA-XXXXXXXX-X",
   "isViewRelatedPosts": true,
   "relatedPostsMaxCount": 3,
-  "defaultPostIcon": "fa-solid fa-folder-open"
+  "defaultPostIcon": "fa-solid fa-folder-open",
+  "randomColorPostIcon": true
 }
