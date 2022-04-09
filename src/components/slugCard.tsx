@@ -16,7 +16,7 @@ type Props = {
 const SlugCard: React.FC<Props> = ({ slug, title, date, topics, icon }) => {
   return (
     <Box>
-      <Grid container>
+      <Grid container wrap="nowrap">
         <Grid
           item
           xs="auto"
