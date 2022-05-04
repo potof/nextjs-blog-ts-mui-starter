@@ -1,25 +1,21 @@
 version: 0.2
-
 env:
   variables:
     NODE_ENV: "production"
-
 phases:
   install:
+    runtime-versions:
+      nodejs: 17
     commands:
-      - echo Installing dependency...
-      - npm install
+      - yarn
+      - npm install -g next
+      - npm install -g typescript
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Next.js code
-      - npm run build
+      - yarn build
 artifacts:
   files:
     - .next/**/*
-    - next.config.js
-    - node_modules/**/*
     - package.json
-    # - appspec.yml
-    # - restart.sh
-  enable-symlinks: yes
+    - next.config.js
+    - tsconfig.json
