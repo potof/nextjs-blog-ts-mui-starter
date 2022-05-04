@@ -5,7 +5,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 17
+      nodejs: 12
     commands:
       - yarn
       - npm install -g next
