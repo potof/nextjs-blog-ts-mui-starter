@@ -1,0 +1,25 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "production"
+
+phases:
+  install:
+    commands:
+      - echo Installing dependency...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Next.js code
+      - npm run build
+artifacts:
+  files:
+    - .next/**/*
+    - next.config.js
+    - node_modules/**/*
+    - package.json
+    # - appspec.yml
+    # - restart.sh
+  enable-symlinks: yes
