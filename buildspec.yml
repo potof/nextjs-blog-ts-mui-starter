@@ -11,6 +11,7 @@ phases:
       - yarn
       - npm install -g next
       - npm install -g typescript
+      - yarn add --dev typescript @types/node
   build:
     commands:
       - yarn build
