@@ -8,8 +8,8 @@ phases:
       -  #n 17
       - node -v
       - codebuild-breakpoint
-      - npm install -g next
-      - npm install -g typescript @types/node
+      -  #npm install -g next
+      -  #npm install -g typescript @types/node
       - npm i
   build:
     commands:
