@@ -8,16 +8,18 @@ phases:
       nodejs: 12
     commands:
       - n 17
+      - node -v
       - npm cache clean --force
       - rm -rf node_modules
       - npm ci
-      - yarn build
+      - npm list
+      - npm list -g
       -  #npm install -g next
       -  #npm install -g typescript
       -  #yarn add --dev typescript @types/node
   build:
     commands:
-      -  #yarn build
+      - yarn build
 artifacts:
   files:
     - .next/**/*
