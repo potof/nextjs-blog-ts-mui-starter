@@ -13,7 +13,7 @@ phases:
       - npm i
   build:
     commands:
-      - npx next build && next export
+      - npm run build
 artifacts:
   files:
     - .next/**/*
