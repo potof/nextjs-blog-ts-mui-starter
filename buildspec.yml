@@ -9,9 +9,10 @@ phases:
     commands:
       - n 17
       - node -v
-      - yarn cache clean
-      - rm -rf node_modules
+      -  #yarn cache clean
+      -  #rm -rf node_modules
       - yarn
+      - yarn upgrade
       - yarn list --depth=0
       - yarn add --dev typescript@4.6.3 @types/react-dom@17.0.14
       - yarn add --dev @types/node
