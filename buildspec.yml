@@ -11,6 +11,7 @@ phases:
       - node -v
       -  #yarn cache clean
       -  #rm -rf node_modules
+      - codebuild-breakpoint
       - yarn
       - yarn upgrade
       - yarn list --depth=0
