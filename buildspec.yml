@@ -9,8 +9,8 @@ phases:
       - node -v
       - codebuild-breakpoint
       - npm install -g next
-      - npm install -g typescript
-      - npm i
+      - npm install -g typescript @types/node
+      - npm ci
   build:
     commands:
       - npm run build
