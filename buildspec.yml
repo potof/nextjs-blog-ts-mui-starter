@@ -5,9 +5,9 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: latest
     commands:
-      - n 17
+      -  #n 17
       - node -v
       -  #yarn cache clean
       -  #rm -rf node_modules
