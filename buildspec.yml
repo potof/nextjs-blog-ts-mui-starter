@@ -9,8 +9,9 @@ phases:
     commands:
       -  #n 17
       - node -v
-      -  #yarn cache clean
-      -  #rm -rf node_modules
+      - yarn cache clean
+      - yarn global add next
+      - yarn global add typescript
       - codebuild-breakpoint
       - yarn
       - yarn upgrade
