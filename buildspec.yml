@@ -4,27 +4,15 @@ env:
     NODE_ENV: "production"
 phases:
   install:
-    runtime-versions:
-      nodejs: latest
     commands:
       -  #n 17
       - node -v
-      - yarn cache clean
-      - yarn global add next
-      - yarn global add typescript
+      - npm install -g next
+      - npm install -g typescript
       - codebuild-breakpoint
       - yarn
-      - yarn upgrade
-      - yarn list --depth=0
-      - yarn add --dev typescript@4.6.3 @types/react-dom@17.0.14
-      - yarn add --dev @types/node
-      - yarn add --dev @types/gtag.js@^0.0.10
-      - yarn add --dev eslint@8.12.0 eslint-config-next@12.1.1
-      - yarn add --dev typescript@4.6.3
-      - yarn list --depth=0
   build:
     commands:
-      - yarn list @types/node
       - yarn build
 artifacts:
   files:
