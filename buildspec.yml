@@ -8,10 +8,10 @@ phases:
       nodejs: 12
     commands:
       - n 17
-      - yarn
-      - npm install -g next
-      - npm install -g typescript
-      - yarn add --dev typescript @types/node
+      - npm ci
+      -  #npm install -g next
+      -  #npm install -g typescript
+      -  #yarn add --dev typescript @types/node
   build:
     commands:
       - yarn build
