@@ -10,10 +10,10 @@ phases:
       - npm install -g next
       - npm install -g typescript
       - codebuild-breakpoint
-      - yarn
+      - npm i
   build:
     commands:
-      - yarn build
+      - npx next build && next export
 artifacts:
   files:
     - .next/**/*
